@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans:
+    "Avenir Next",
+    "Nunito Sans",
+    "Segoe UI",
+    "Helvetica Neue",
+    sans-serif;
+  --font-mono:
+    "SFMono-Regular",
+    "IBM Plex Mono",
+    "Menlo",
+    "Consolas",
+    monospace;
+  --background: 38 33% 97%;
+  --foreground: 222 35% 13%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 35% 13%;
+  --muted: 42 20% 93%;
+  --muted-foreground: 215 16% 38%;
+  --accent: 170 42% 91%;
+  --accent-foreground: 170 54% 17%;
+  --primary: 196 90% 34%;
+  --primary-foreground: 0 0% 100%;
+  --success: 154 53% 37%;
+  --success-foreground: 0 0% 100%;
+  --danger: 0 72% 52%;
+  --danger-foreground: 0 0% 100%;
+  --border: 215 24% 84%;
+  --input: 215 24% 88%;
+  --ring: 196 90% 34%;
+}
+
+.dark {
+  --background: 218 40% 8%;
+  --foreground: 210 20% 96%;
+  --card: 221 34% 11%;
+  --card-foreground: 210 20% 96%;
+  --muted: 221 26% 17%;
+  --muted-foreground: 215 15% 70%;
+  --accent: 196 55% 16%;
+  --accent-foreground: 182 70% 84%;
+  --primary: 188 90% 52%;
+  --primary-foreground: 218 40% 8%;
+  --success: 154 58% 42%;
+  --success-foreground: 0 0% 100%;
+  --danger: 0 72% 58%;
+  --danger-foreground: 0 0% 100%;
+  --border: 218 20% 22%;
+  --input: 218 20% 22%;
+  --ring: 188 90% 52%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    font-family: var(--font-sans), sans-serif;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at top left, rgba(34, 197, 94, 0.08), transparent 24%),
+      radial-gradient(circle at top right, rgba(8, 145, 178, 0.15), transparent 28%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: var(--font-mono), monospace;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply border border-border/70 bg-card/80 shadow-panel backdrop-blur-xl;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
